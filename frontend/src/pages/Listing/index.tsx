@@ -8,7 +8,7 @@ import { BASE_URL } from "utils/requests";
 function Listing() {
 
     //const [pageNumber, setPageNumber] = useState(0);
-    const [pageNumber] = useState(0);
+    const [pageNumber, setPageNumber] = useState(0);
 
     const [page, setPage] = useState<MoviePage>({
         content: [],
@@ -27,7 +27,7 @@ function Listing() {
             .then(response => {
                 const data = response.data as MoviePage;
                 // console.log(data);
-                // setPageNumber(data.number);
+                setPageNumber(data.number);
                 setPage(data);
             })
 
